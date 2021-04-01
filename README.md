@@ -37,7 +37,25 @@ nvidia-xconfig
 ```
 Reboot
 ## Customization (Optional)
+If you don't need a Windows-10 like desktop, skip this step.
+```
+yum -y install chrome-gnome-shell
+```
+Goto https://extensions.gnome.org/ and install the following gnome-extensions
 
+[Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
+
+[TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/)
+
+[No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/)
+
+Start `GNOME Tweaks`
+
+In `Desktop` tab enable icons.
+
+In `Extensions` tab switch on `Application menu`. Goto the setting button of `Dash to panel` and disable `Application button`
+
+In `Windows` tab enable minimize and maximize button.
 ## Troubleshooting
 1. Can't read external hard drive
 
