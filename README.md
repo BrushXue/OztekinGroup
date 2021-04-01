@@ -32,7 +32,7 @@ yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 ```
 Install Nvidia **390** driver(Latest may not work if the GPU is too old)
 ```
-yum -y install kmod-nvidia-340xx
+yum -y install kmod-nvidia-390xx
 nvidia-xsettings
 ```
 Reboot
