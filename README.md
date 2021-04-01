@@ -24,9 +24,19 @@ Goto `Utilities -> Disks` and select HDD. Click `Edit mount options` and switch 
 
 Reboot
 
-## Customization (Optional)
-
 ## Installing Nvidia Driver
+Import ELRepo
+```
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
+```
+Install Nvidia **390** driver(Latest may not work if the GPU is too old)
+```
+yum -y install kmod-nvidia-340xx
+nvidia-xsettings
+```
+Reboot
+## Customization (Optional)
 
 ## Troubleshooting
 1. Can't read external hard drive
