@@ -30,10 +30,10 @@ Import ELRepo
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 ```
-Install Nvidia **390** driver(Latest may not work if the GPU is too old)
+Install Nvidia **390** driver(Latest version may not work if the GPU is too old)
 ```
 yum -y install kmod-nvidia-390xx
-nvidia-xsettings
+nvidia-xconfig
 ```
 Reboot
 ## Customization (Optional)
