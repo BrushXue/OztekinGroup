@@ -1,8 +1,8 @@
 # OztekinGroup
 Instructions to reinstall lab workstations
 
-## Install CentOS 7.9
-### Installer
+## CentOS 7.9
+### Creating Installer
 1. Download CentOS 7.9 from [Lehigh mirror](http://linux.cc.lehigh.edu/centos/7/isos/x86_64/) for fastest speed, DVD iso is enough.
 2. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive.
 3. Boot from the flash drive. Select `UEFI` if available.
@@ -14,8 +14,19 @@ Instructions to reinstall lab workstations
 4. Network : Enable ethernet if available.
 5. Setup root password and user/password. Do not select `make this user administrator`.
 
-## Install Nvidia Driver
+## Initialization
+First time boot: Log in to `root`. Click the gear and select `GNOME` instead of `GNOME Classic`.
+Perform system update
+```
+yum -y update
+```
+Goto `Utilities -> Disks` and select HDD. Click `Edit mount options` and switch `Use Session Defaults` to `OFF`
 
+Reboot
+
+## Customization (Optional)
+
+## Installing Nvidia Driver
 
 ## Troubleshooting
 1. Can't read external hard drive
