@@ -9,7 +9,7 @@ Instructions to reinstall lab workstations
 5. 
 ## Options
 1. Software Selection: `Development and Creative Workstation` plus `Development Tools`
-2. Installation Destination: Choose the SSD, and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 80 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
+2. Installation Destination: Choose the SSD, and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
 3. Disable Kdump(useless)
 4. Network : Enable ethernet if available.
 5. Setup root password and user/password. Do not select `make this user administrator`.
@@ -38,7 +38,7 @@ nvidia-xconfig
 Reboot
 
 ## OpenFOAM
-Install OpenFOAM binary package
+Install pre-compiled OpenFOAM
 ```
 yum -y install epel-release
 yum -y update
@@ -47,11 +47,11 @@ yum -y copr enable openfoam/openfoam
 yum -y install openfoam-selector
 yum -y install openfoam2012-default
 ```
-Install legacy Paraview binary package
+Install legacy Paraview
 ```
 yum -y install paraview paraview-devel
 ```
-Install latest Paraview binary package (optional)
+Install alternative Paraview binary
 ```
 cd /usr/lib/openfoam/
 wget -O ParaView-5.9.0.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.9&type=binary&os=Linux&downloadFile=ParaView-5.9.0-MPI-Linux-Python3.8-64bit.tar.gz"
@@ -60,6 +60,7 @@ mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
 rm ParaView-5.9.0.tar.gz 
 ```
 ## Install Ansys
+Only CentOS 7 + Ansys 2020 R2 combination works.
 ```
 mkdir -p /share/Apps/ANSYS
 yum -y install filezilla libpng12
