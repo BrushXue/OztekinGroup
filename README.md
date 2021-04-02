@@ -30,14 +30,14 @@ Import ELRepo
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 ```
-Install Nvidia **390** driver(Latest version may not work if the GPU is too old)
+Install Nvidia **390** driver(Latest version may not work)
 ```
 yum -y install kmod-nvidia-390xx
 nvidia-xconfig
 ```
 Reboot
 ## Customization (Optional)
-If you don't need a Windows-10 like desktop, skip this step.
+If you don't need a Windows-10 like desktop environment, skip this step.
 ```
 yum -y install chrome-gnome-shell
 ```
@@ -56,7 +56,31 @@ In `Desktop` tab enable icons.
 In `Extensions` tab switch on `Application menu`. Goto the setting button of `Dash to panel` and disable `Application button`
 
 In `Windows` tab enable minimize and maximize button.
+
+## OpenFOAM
+Install OpenFOAM binary package
+```
+yum -y install epel-release
+yum -y update
+yum -y install yum-plugin-copr
+yum -y copr enable openfoam/openfoam
+yum -y install openfoam-selector
+yum -y install openfoam2012-default
+```
+Install Paraview Binary Package
+```
+yum -y install paraview paraview-devel
+```
 ## Troubleshooting
-1. Can't read external hard drive
+1. OpenFOAM is not activated for new users.
+```
+echo "source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS" >> $HOME/.bashrc
+```
+2. The default paraview version is too old.
+Download the latest version from https://www.paraview.org/download/ and extract it somewhere.
+```
+echo "export PATH=$PATH:*path_to_paraview*/bin" >> $HOME/.bashrc
+```
+3. Can't read external hard drive
 
 Install `ntfs-3g`
