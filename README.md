@@ -12,7 +12,7 @@ End of life: June 30th, 2024
 2. Installation Destination: Choose the SSD and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
 3. Disable Kdump(useless)
 4. Network : Enable ethernet if available.
-5. Setup root password and user/password. Do not select `make this user administrator`.
+5. Setup root password and set username as `oztekinlab`. Do not select `make this user administrator`.
 
 ## Initialization
 First time boot: Log in to `root`. Click the gear and select `GNOME` instead of `GNOME Classic`.
@@ -37,15 +37,19 @@ nvidia-xconfig
 ```
 Reboot
 
-## Install A****(you know what it is)
+## Install A****(you know...)
 Only CentOS 7 + A**** 20R2 combination works.
 ```
-mkdir -p /share/Apps/A****
-yum -y install filezilla libpng12
+mkdir -p /share/Apps
+yum -y install libpng12
 ```
-Using Filezilla to copy all files from `sol.cc.lehigh.edu:/share/Apps/A****/v202`
+Login to group NAS
+```
+smb://<username>@oztekingroup.dept.lehigh.edu
+```
+Copy all files from `/mnt/Lab/gux215/a****`
 
-While waiting for it, you can continue.
+While waiting for it, you can continue and come back later.
 
 Use `chmod +x -R` to fix executable permission.
 
@@ -103,7 +107,7 @@ In `Windows` tab enable minimize and maximize button.
 ```
 echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
 ```
-2. Activate ParaView
+2. Activate newer ParaView (optional)
 ```
 echo 'export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH' >> $HOME/.bashrc
 ```
@@ -116,4 +120,8 @@ chgrp -R oztekinlab <path>
 4. Mount NTFS format external HDD
 ```
 yum -y install ntfs-3g
+```
+5. Install filezilla for convenience
+```
+yum -y install filezilla
 ```
