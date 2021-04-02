@@ -47,7 +47,7 @@ Login to group NAS
 ```
 smb://<username>@oztekingroup.dept.lehigh.edu
 ```
-Copy all files from `/mnt/Lab/gux215/a****`
+Copy all files from `/mnt/Lab/gux215/a****` to `/share/Apps`
 
 While waiting for it, you can continue and come back later.
 
