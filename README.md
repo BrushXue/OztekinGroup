@@ -101,5 +101,6 @@ echo "source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS" >> $HOME/
 echo "export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH" >> $HOME/.bashrc
 ```
 3. Can't read external hard drive
-
-Install `ntfs-3g`
+```
+yum -y install ntfs-3g
+```
