@@ -64,13 +64,18 @@ Only CentOS 7 + Ansys 2020 R2 combination works.
 mkdir -p /share/Apps/ANSYS
 yum -y install filezilla libpng12
 ```
-Copy all files from `sol.cc.lehigh.edu:/share/Apps/ANSYS/v202`
+Using Filzilla to copy all files from `sol.cc.lehigh.edu:/share/Apps/ANSYS/v202`
 
 Use `chmod +x -R` to fix executable permission.
 
 ## Install Anydesk & Teamviewer
+Download `.rpm` package and use `yum -y <filename>`.
 
+## New users
+
+**DO NOT** give administrator to regular users, unless the computer has only 1 user.
 ## Customization (Optional)
+All below are for non-root users.
 If you don't need a Windows-10 like desktop environment, skip this step.
 ```
 yum -y install chrome-gnome-shell
