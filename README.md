@@ -6,7 +6,6 @@ Instructions to reinstall lab workstations
 2. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive.
 3. Boot from the flash drive. Select `UEFI` if available.
 4. Install CentOS 7. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> CentOS 7 in basic graphics mode`.
-5. 
 ## Options
 1. Software Selection: `Development and Creative Workstation` plus `Development Tools`
 2. Installation Destination: Choose the SSD, and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
@@ -30,7 +29,7 @@ Import ELRepo
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 ```
-Install Nvidia **390** driver(Latest version may not work)
+Install Nvidia **390** driver(Latest version may not work for some GPUs)
 ```
 yum -y install kmod-nvidia-390xx
 nvidia-xconfig
@@ -49,9 +48,9 @@ yum -y install openfoam2012-default
 ```
 Install legacy Paraview
 ```
-yum -y install paraview paraview-devel
+yum -y install paraview
 ```
-Install alternative Paraview binary
+Download alternative Paraview binary
 ```
 cd /usr/lib/openfoam/
 wget -O ParaView-5.9.0.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.9&type=binary&os=Linux&downloadFile=ParaView-5.9.0-MPI-Linux-Python3.8-64bit.tar.gz"
@@ -67,6 +66,8 @@ yum -y install filezilla libpng12
 ```
 Copy all files from `sol.cc.lehigh.edu:/share/Apps/ANSYS/v202`
 Use `chmod +x -R` to fix executable permission.
+
+## Install Anydesk & Teamviewer
 
 ## Customization (Optional)
 If you don't need a Windows-10 like desktop environment, skip this step.
