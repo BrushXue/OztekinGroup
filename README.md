@@ -1,6 +1,6 @@
 # OztekinGroup
 Instructions to reinstall lab workstations
-
+End of life: June 30th, 2024
 ## Creating Installer
 1. Download CentOS 7.9 from [Lehigh mirror](http://linux.cc.lehigh.edu/centos/7/isos/x86_64/) for fastest speed, DVD iso is enough.
 2. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive.
