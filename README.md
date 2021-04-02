@@ -9,7 +9,7 @@ End of life: June 30th, 2024
 4. Install CentOS 7. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> CentOS 7 in basic graphics mode`.
 ## Options
 1. Software Selection: `Development and Creative Workstation` plus `Development Tools`
-2. Installation Destination: Choose the SSD, and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
+2. Installation Destination: Choose the SSD and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
 3. Disable Kdump(useless)
 4. Network : Enable ethernet if available.
 5. Setup root password and user/password. Do not select `make this user administrator`.
@@ -20,7 +20,7 @@ Perform system update
 ```
 yum -y update
 ```
-Goto `Utilities -> Disks` and select HDD. Click `Edit mount options` and switch `Use Session Defaults` to `OFF`
+Go to `Utilities -> Disks` and select HDD. Click `Edit mount options` and switch `Use Session Defaults` to `OFF`
 
 Reboot
 
@@ -36,6 +36,18 @@ yum -y install kmod-nvidia-390xx
 nvidia-xconfig
 ```
 Reboot
+
+## Install A****(you know what it is)
+Only CentOS 7 + A**** 20R2 combination works.
+```
+mkdir -p /share/Apps/A****
+yum -y install filezilla libpng12
+```
+Using Filezilla to copy all files from `sol.cc.lehigh.edu:/share/Apps/A****/v202`
+
+While waiting for it, you can continue.
+
+Use `chmod +x -R` to fix executable permission.
 
 ## OpenFOAM
 Install pre-compiled OpenFOAM
@@ -59,20 +71,9 @@ tar -xzf ParaView-5.9.0.tar.gz
 mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
 rm ParaView-5.9.0.tar.gz 
 ```
-## Install A****(you know what it is)
-Only CentOS 7 + A**** 20R2 combination works.
-```
-mkdir -p /share/Apps/A****
-yum -y install filezilla libpng12
-```
-Using Filzilla to copy all files from `sol.cc.lehigh.edu:/share/Apps/A****/v202`
-
-Use `chmod +x -R` to fix executable permission.
 
 ## Install Anydesk & Teamviewer
 Download `.rpm` package and use `yum -y install <filename>`.
-
-## New users
 
 **DO NOT** give administrator to regular users, unless the computer has only 1 user.
 ## Customization (Optional)
@@ -93,20 +94,26 @@ Start `GNOME Tweaks`
 
 In `Desktop` tab enable icons.
 
-In `Extensions` tab switch on `Application menu`. Goto the setting button of `Dash to panel` and disable `Application button`
+In `Extensions` tab switch on `Application menu`. Go to the setting button of `Dash to panel` and disable `Application button`
 
 In `Windows` tab enable minimize and maximize button.
 
-## Troubleshooting
-1. OpenFOAM is not activated for new users.
+## Post-installation
+1. Activated OpenFOAM
 ```
-echo "source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS" >> $HOME/.bashrc
+echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
 ```
-2. The default paraview version is too old.
+2. Activate ParaView
 ```
-echo "export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH" >> $HOME/.bashrc
+echo 'export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH' >> $HOME/.bashrc
 ```
-3. Can't read external hard drive
+3. Fix internal HDD file permission
+```
+su root
+chown -R oztekinlab <path>
+chgrp -R oztekinlab <path>
+```
+5. I can't mount the external HDD
 ```
 yum -y install ntfs-3g
 ```
