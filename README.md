@@ -58,13 +58,13 @@ tar -xzf ParaView-5.9.0.tar.gz
 mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
 rm ParaView-5.9.0.tar.gz 
 ```
-## Install Ansys
-Only CentOS 7 + Ansys 2020 R2 combination works.
+## Install A****
+Only CentOS 7 + A**** 2020 R2 combination works.
 ```
-mkdir -p /share/Apps/ANSYS
+mkdir -p /share/Apps/A****
 yum -y install filezilla libpng12
 ```
-Using Filzilla to copy all files from `sol.cc.lehigh.edu:/share/Apps/ANSYS/v202`
+Using Filzilla to copy all files from `sol.cc.lehigh.edu:/share/Apps/A****/v202`
 
 Use `chmod +x -R` to fix executable permission.
 
