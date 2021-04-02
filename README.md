@@ -113,7 +113,7 @@ su root
 chown -R oztekinlab <path>
 chgrp -R oztekinlab <path>
 ```
-5. I can't mount the external HDD
+4. Mount NTFS format external HDD
 ```
 yum -y install ntfs-3g
 ```
