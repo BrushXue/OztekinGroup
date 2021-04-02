@@ -12,7 +12,7 @@ End of life: June 30th, 2024
 2. Installation Destination: Choose the SSD and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
 3. Disable Kdump(useless)
 4. Network : Enable ethernet if available.
-5. Setup root password and set username as `oztekinlab`. Do not select `make this user administrator`.
+5. Setup root password and set username as `oztekinlab` if it's a public computer. Do not select `make this user administrator`.
 
 ## Initialization
 First time boot: Log in to `root`. Click the gear and select `GNOME` instead of `GNOME Classic`.
@@ -79,7 +79,6 @@ rm ParaView-5.9.0.tar.gz
 ## Install Anydesk & Teamviewer
 Download `.rpm` package and use `yum -y install <filename>`.
 
-**DO NOT** give administrator to regular users, unless the computer has only 1 user.
 ## Customization (Optional)
 All below are for non-root users.
 If you don't need a Windows-10 like desktop environment, skip this step.
