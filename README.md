@@ -58,8 +58,8 @@ tar -xzf ParaView-5.9.0.tar.gz
 mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
 rm ParaView-5.9.0.tar.gz 
 ```
-## Install A****
-Only CentOS 7 + A**** 2020 R2 combination works.
+## Install A****(you know what it is)
+Only CentOS 7 + A**** 20R2 combination works.
 ```
 mkdir -p /share/Apps/A****
 yum -y install filezilla libpng12
@@ -69,7 +69,7 @@ Using Filzilla to copy all files from `sol.cc.lehigh.edu:/share/Apps/A****/v202`
 Use `chmod +x -R` to fix executable permission.
 
 ## Install Anydesk & Teamviewer
-Download `.rpm` package and use `yum -y <filename>`.
+Download `.rpm` package and use `yum -y install <filename>`.
 
 ## New users
 
