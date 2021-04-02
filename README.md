@@ -47,7 +47,7 @@ yum -y copr enable openfoam/openfoam
 yum -y install openfoam-selector
 yum -y install openfoam2012-default
 ```
-Install Paraview Binary Package
+Install Paraview binary package
 ```
 yum -y install paraview paraview-devel
 ```
@@ -79,6 +79,7 @@ In `Windows` tab enable minimize and maximize button.
 echo "source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS" >> $HOME/.bashrc
 ```
 2. The default paraview version is too old.
+
 Download the latest version from https://www.paraview.org/download/ and extract it somewhere.
 ```
 echo "export PATH=$PATH:*path_to_paraview*/bin" >> $HOME/.bashrc
