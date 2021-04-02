@@ -64,7 +64,7 @@ rm ParaView-5.9.0.tar.gz
 mkdir -p /share/Apps/ANSYS
 yum -y install filezilla libpng12
 ```
-Copy all files from `/share/Apps/ANSYS/v202`
+Copy all files from `sol.cc.lehigh.edu:/share/Apps/ANSYS/v202`
 Use `chmod +x -R` to fix executable permission.
 
 ## Customization (Optional)
