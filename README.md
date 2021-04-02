@@ -82,7 +82,7 @@ echo "source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS" >> $HOME/
 
 Download the latest version from https://www.paraview.org/download/ and extract it somewhere.
 ```
-echo "export PATH=$PATH:*path_to_paraview*/bin" >> $HOME/.bashrc
+echo "export PATH=$PATH:path_to_paraview/bin" >> $HOME/.bashrc
 ```
 3. Can't read external hard drive
 
