@@ -47,10 +47,25 @@ yum -y copr enable openfoam/openfoam
 yum -y install openfoam-selector
 yum -y install openfoam2012-default
 ```
-Install Paraview binary package
+Install legacy Paraview binary package
 ```
 yum -y install paraview paraview-devel
 ```
+Install latest Paraview binary package (optional)
+```
+cd /usr/lib/openfoam/
+wget -O ParaView-5.9.0.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.9&type=binary&os=Linux&downloadFile=ParaView-5.9.0-MPI-Linux-Python3.8-64bit.tar.gz"
+tar -xzf ParaView-5.9.0.tar.gz 
+mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
+rm ParaView-5.9.0.tar.gz 
+```
+## Install Ansys
+```
+mkdir -p /share/Apps/ANSYS
+yum -y install filezilla libpng12
+```
+Copy all files from `/share/Apps/ANSYS/v202`
+Use `chmod +x -R` to fix executable permission.
 
 ## Customization (Optional)
 If you don't need a Windows-10 like desktop environment, skip this step.
@@ -79,10 +94,8 @@ In `Windows` tab enable minimize and maximize button.
 echo "source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS" >> $HOME/.bashrc
 ```
 2. The default paraview version is too old.
-
-Download the latest version from https://www.paraview.org/download/ and extract it somewhere.
 ```
-echo "export PATH=$PATH:path_to_paraview/bin" >> $HOME/.bashrc
+echo "export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH" >> $HOME/.bashrc
 ```
 3. Can't read external hard drive
 
