@@ -51,7 +51,7 @@ Copy all files from `/mnt/Lab/gux215/a****` to `/share/Apps`
 
 While waiting for it, you can continue and come back later.
 
-Use `chmod +x -R` to fix executable permission.
+~~Use `chmod +x -R` to fix executable permission.~~
 
 ## OpenFOAM
 Install pre-compiled OpenFOAM
@@ -113,8 +113,8 @@ echo 'export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH' >> $HOME/.bashrc
 3. Fix internal HDD file permission
 ```
 su root
-chown -R oztekinlab <path>
-chgrp -R oztekinlab <path>
+chown -R <username> <path>
+chgrp -R <username> <path>
 ```
 4. Mount NTFS format external HDD
 ```
