@@ -124,6 +124,7 @@ yum -y install ntfs-3g
 yum -y install filezilla
 ```
 6. Install swak4foam
+
 In root account
 ```
 yum -y install mercurial openmpi-devel readline-devel
