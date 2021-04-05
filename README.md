@@ -75,7 +75,6 @@ tar -xzf ParaView-5.9.0.tar.gz
 mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
 rm ParaView-5.9.0.tar.gz 
 ```
-
 ## Install Anydesk & Teamviewer
 Download `.rpm` package and use `yum -y install <filename>`.
 
@@ -124,3 +123,22 @@ yum -y install ntfs-3g
 ```
 yum -y install filezilla
 ```
+6. Install swak4foam
+In root account
+```
+yum -y install mercurial openmpi-devel
+```
+log out & log in non-root user
+```
+echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
+source $HOME/.bashrc
+cd $HOME
+mkdir OpenFOAM
+cd OpenFOAM
+hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam swak4Foam
+cd swak4Foam
+hg update develop
+export WM_NCOMPPROCS=$(nproc)
+./AllwmakeAll
+```
+The compilation will crash. Run `./AllwmakeAll` again until the script finishes.
