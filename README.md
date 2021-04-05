@@ -75,11 +75,32 @@ tar -xzf ParaView-5.9.0.tar.gz
 mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
 rm ParaView-5.9.0.tar.gz 
 ```
+## swak4foam
+
+In root account
+```
+yum -y install mercurial openmpi-devel readline-devel
+```
+log out & log in **non-root user**
+```
+echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
+echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
+source $HOME/.bashrc
+cd $HOME
+mkdir OpenFOAM
+cd OpenFOAM
+hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam swak4Foam
+cd swak4Foam
+hg update develop
+export WM_NCOMPPROCS=$(nproc)
+./AllwmakeAll
+```
+If the compilation fails, run `./AllwmakeAll` multiple rounds until it finishes.
+
 ## Install Anydesk & Teamviewer
 Download `.rpm` package and use `yum -y install <filename>`.
 
 ## Customization (Optional)
-All below are for non-root users.
 If you don't need a Windows-10 like desktop environment, skip this step.
 ```
 yum -y install chrome-gnome-shell
@@ -99,28 +120,6 @@ In `Desktop` tab enable icons.
 In `Extensions` tab switch on `Application menu`. Go to the setting button of `Dash to panel` and disable `Application button`
 
 In `Windows` tab enable minimize and maximize button.
-
-6. Install swak4foam
-
-In root account
-```
-yum -y install mercurial openmpi-devel readline-devel
-```
-log out & log in non-root user
-```
-echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
-echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
-source $HOME/.bashrc
-cd $HOME
-mkdir OpenFOAM
-cd OpenFOAM
-hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam swak4Foam
-cd swak4Foam
-hg update develop
-export WM_NCOMPPROCS=$(nproc)
-./AllwmakeAll
-```
-If the compilation fails, run `./AllwmakeAll` multiple rounds until it finishes.
 
 ## Post-installation
 1. Activate newer ParaView (optional)
