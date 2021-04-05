@@ -126,7 +126,7 @@ yum -y install filezilla
 6. Install swak4foam
 In root account
 ```
-yum -y install mercurial openmpi-devel
+yum -y install mercurial openmpi-devel readline-devel
 ```
 log out & log in non-root user
 ```
