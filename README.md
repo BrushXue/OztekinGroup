@@ -141,4 +141,4 @@ hg update develop
 export WM_NCOMPPROCS=$(nproc)
 ./AllwmakeAll
 ```
-The compilation will crash. Run `./AllwmakeAll` again until the script finishes.
+If the compilation fails, run `./AllwmakeAll` again and it will finish.
