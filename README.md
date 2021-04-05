@@ -100,29 +100,6 @@ In `Extensions` tab switch on `Application menu`. Go to the setting button of `D
 
 In `Windows` tab enable minimize and maximize button.
 
-## Post-installation
-1. Activated OpenFOAM
-```
-echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
-```
-2. Activate newer ParaView (optional)
-```
-echo 'export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH' >> $HOME/.bashrc
-```
-3. Fix internal HDD file permission
-```
-su root
-chown -R <username> <path>
-chgrp -R <username> <path>
-```
-4. Mount NTFS format external HDD
-```
-yum -y install ntfs-3g
-```
-5. Install filezilla for convenience
-```
-yum -y install filezilla
-```
 6. Install swak4foam
 
 In root account
@@ -132,6 +109,7 @@ yum -y install mercurial openmpi-devel readline-devel
 log out & log in non-root user
 ```
 echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
+echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
 source $HOME/.bashrc
 cd $HOME
 mkdir OpenFOAM
@@ -143,3 +121,19 @@ export WM_NCOMPPROCS=$(nproc)
 ./AllwmakeAll
 ```
 If the compilation fails, run `./AllwmakeAll` multiple rounds until it finishes.
+
+## Post-installation
+1. Activate newer ParaView (optional)
+```
+echo 'export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH' >> $HOME/.bashrc
+```
+2. Fix internal HDD file permission
+```
+su root
+chown -R <username> <path>
+chgrp -R <groupname> <path>
+```
+3. Mount NTFS format external HDD
+```
+yum -y install ntfs-3g
+```
