@@ -78,12 +78,10 @@ rm ParaView-5.9.0.tar.gz
 ## swak4foam
 ```
 su root
-yum -y install mercurial openmpi-devel readline-devel python-devel
+yum -y install mercurial readline-devel python-devel
 exit
 ```
-If `module` is not avaiable, log out & log in.
 ```
-echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
 echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
 source $HOME/.bashrc
 cd $HOME
@@ -133,18 +131,24 @@ In `Extensions` tab switch on `Application menu`. Go to the setting button of `D
 In `Windows` tab enable minimize and maximize button.
 
 ## Post-installation
-1. Activate newer ParaView (optional)
+1. Can't run OpenFOAM in parallel
+If `mpirun` command is missing
+```
+echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
+```
+If `module` is missing as well, log out & log in.
+2. Activate newer ParaView (optional)
 ```
 echo 'export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH' >> $HOME/.bashrc
 ```
 You may see a lot of warning messages.
-2. Fix internal HDD ownership after reinstallation.
+3. Fix internal HDD ownership after reinstallation.
 ```
 su root
 chown -R <username> <path>
 chgrp -R <groupname> <path>
 ```
-3. Mount NTFS format external HDD
+4. Mount NTFS format external HDD
 ```
 yum -y install ntfs-3g
 ```
