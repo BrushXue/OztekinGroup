@@ -77,11 +77,12 @@ rm ParaView-5.9.0.tar.gz
 ```
 ## swak4foam
 
-In root account
 ```
+su root
 yum -y install mercurial openmpi-devel readline-devel python-devel
+exit
 ```
-log out & log in **non-root user**
+If `module` is not avaiable, log out & log in.
 ```
 echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
 echo 'source /usr/lib/openfoam/openfoam2012/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
@@ -98,16 +99,16 @@ export WM_NCOMPPROCS=$(nproc)
 If the compilation fails, run `./AllwmakeAll` multiple rounds until it finishes.
 
 ## pyFoam
-In root account
 ```
+su root
 yum -y install python-pip numpy gnuplot
 pip install pyfoam
+exit
 ```
-In **non-root user** run
+Usage:
 ```
 pyFoamPlotWatcher.py <logfilename>
 ```
-to see residual plots.
 ## Install Anydesk & Teamviewer
 Download `.rpm` package and use `yum -y install <filename>`.
 
