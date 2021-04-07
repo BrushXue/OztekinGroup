@@ -4,7 +4,7 @@ Instructions to reinstall lab workstations
 End of life: June 30th, 2024
 ## Creating Installer
 1. Download the latest CentOS 7 image from [Lehigh mirror](http://linux.cc.lehigh.edu/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso) for the fastest speed.
-2. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive.
+2. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive. This tool is cross-platform and you can do it on any OS.
 3. Boot from the flash drive. Select `UEFI` if available.
 4. Install CentOS 7. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> CentOS 7 in basic graphics mode`.
 ## Options
