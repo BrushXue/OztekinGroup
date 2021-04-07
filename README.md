@@ -79,7 +79,7 @@ rm ParaView-5.9.0.tar.gz
 
 In root account
 ```
-yum -y install mercurial openmpi-devel readline-devel
+yum -y install mercurial openmpi-devel readline-devel python-devel
 ```
 log out & log in **non-root user**
 ```
