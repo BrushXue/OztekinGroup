@@ -103,7 +103,11 @@ In root account
 yum -y install python-pip numpy gnuplot
 pip install pyfoam
 ```
-
+In **non-root user** run
+```
+pyFoamPlotWatcher.py <logfilename>
+```
+to see residual plots.
 ## Install Anydesk & Teamviewer
 Download `.rpm` package and use `yum -y install <filename>`.
 
