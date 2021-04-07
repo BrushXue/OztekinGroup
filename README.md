@@ -38,7 +38,7 @@ nvidia-xconfig
 Reboot
 
 ## Install A****(you know...)
-Currently only A**** 20R2 combination works. If a future version supports RHEL8 I'll update this accordingly.
+Currently only A**** 20R2 works. If the future version supports RHEL8 I'll update this accordingly.
 ```
 mkdir -p /share/Apps
 yum -y install libpng12
