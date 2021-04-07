@@ -97,6 +97,13 @@ export WM_NCOMPPROCS=$(nproc)
 ```
 If the compilation fails, run `./AllwmakeAll` multiple rounds until it finishes.
 
+## pyFoam
+In root account
+```
+yum -y install python-pip numpy gnuplot
+pip install pyfoam
+```
+
 ## Install Anydesk & Teamviewer
 Download `.rpm` package and use `yum -y install <filename>`.
 
