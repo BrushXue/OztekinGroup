@@ -107,8 +107,12 @@ Usage:
 pyFoamPlotWatcher.py <logfilename>
 ```
 ## Install Anydesk & Teamviewer
-Download `.rpm` package and use `yum -y install <filename>`.
-
+```
+wget https://download.anydesk.com/linux/anydesk-6.1.0-1.el7.x86_64.rpm
+wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
+yum -y install anydesk-6.1.0-1.el7.x86_64.rpm teamviewer.x86_64.rpm
+```
+Then enable unattended access.
 ## Customization (Optional)
 If you don't need a Windows-10 like desktop environment, skip this step.
 ```
