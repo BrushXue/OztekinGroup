@@ -76,7 +76,6 @@ mv ParaView-5.9.0-MPI-Linux-Python3.8-64bit/ ParaView-5.9.0
 rm ParaView-5.9.0.tar.gz 
 ```
 ## swak4foam
-
 ```
 su root
 yum -y install mercurial openmpi-devel readline-devel python-devel
