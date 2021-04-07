@@ -3,7 +3,7 @@ Instructions to reinstall lab workstations
 
 End of life: June 30th, 2024
 ## Creating Installer
-1. Download the latest CentOS 7 image from [Lehigh mirror](http://linux.cc.lehigh.edu/centos/7/isos/x86_64/) for fastest speed, DVD iso is enough.
+1. Download the latest CentOS 7 image from [Lehigh mirror](http://linux.cc.lehigh.edu/centos/7/isos/x86_64/) for the fastest speed, DVD iso is enough.
 2. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive.
 3. Boot from the flash drive. Select `UEFI` if available.
 4. Install CentOS 7. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> CentOS 7 in basic graphics mode`.
@@ -38,7 +38,7 @@ nvidia-xconfig
 Reboot
 
 ## Install A****(you know...)
-Only CentOS 7 + A**** 20R2 combination works.
+Currently only A**** 20R2 combination works. If a future version supports RHEL8 I'll update this accordingly.
 ```
 mkdir -p /share/Apps
 yum -y install libpng12
@@ -137,7 +137,8 @@ In `Windows` tab enable minimize and maximize button.
 ```
 echo 'export PATH=/usr/lib/openfoam/ParaView-5.9.0/bin:$PATH' >> $HOME/.bashrc
 ```
-2. Fix internal HDD file permission
+You may see a lot of warning messages.
+2. Fix internal HDD ownership after reinstallation.
 ```
 su root
 chown -R <username> <path>
