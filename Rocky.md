@@ -17,7 +17,7 @@ Instructions to reinstall lab workstations
 First time boot: Log in to `root`.
 Perform system update
 ```
-yum -y update
+dnf -y update
 ```
 Go to `Utilities -> Disks` and select HDD. Click `Edit mount options` and switch `Use Session Defaults` to `OFF`
 
@@ -42,7 +42,7 @@ A**** 21R1 works with Red Hat 8 and its replica.
 Install prerequisites
 ```
 mkdir -p /share/Apps
-yum -y install libpng12 libnsl
+dnf -y install libpng12 libnsl
 ```
 Login to group NAS
 ```
@@ -59,7 +59,6 @@ Install pre-compiled OpenFOAM
 ```
 dnf -y install epel-release
 dnf -y update
-dnf -y install yum-plugin-copr
 dnf config-manager --set-enabled powertools
 dnf -y copr enable openfoam/openfoam
 dnf -y install openfoam-selector
