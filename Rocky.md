@@ -72,6 +72,7 @@ dnf -y install paraview --enablerepo=epel-testing
 ```
 su root
 dnf -y install mercurial readline-devel python3-devel
+alternatives --set python /usr/bin/python3
 exit
 ```
 ```
