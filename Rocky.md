@@ -7,8 +7,8 @@ Instructions to reinstall lab workstations
 3. Boot from the flash drive. Select `UEFI` if available.
 4. Install Rocky Linux. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> ****** in basic graphics mode`.
 ## Options
-1. Software Selection: `Workstation` plus `Development Tools` and `Scientific Support`
-2. Installation Destination: Choose the SSD and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap`
+1. Software Selection: Choose `Workstation`, tick `Development Tools` and `Scientific Support`
+2. Installation Destination: Choose the SSD and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap` if the RAM is large enough.
 3. Disable Kdump(useless)
 4. Network : Enable ethernet if available.
 5. Setup root password and set username as `oztekinlab` if it's a public computer. Do not select `make this user administrator`.
