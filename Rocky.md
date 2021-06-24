@@ -71,7 +71,7 @@ dnf -y install paraview --enablerepo=epel-testing
 ## swak4foam
 ```
 su root
-dnf -y install mercurial readline-devel python3-devel
+dnf -y install mercurial readline-devel python2-devel python3-devel
 alternatives --set python /usr/bin/python3
 exit
 ```
