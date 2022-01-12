@@ -1,4 +1,4 @@
-# Compile & run OpenFOAM v2112 on Lehigh Sol
+# Compile OpenFOAM v2112 on Lehigh Sol
 1. Download OpenFOAM v2112
 ```bash
 cd $HOME
