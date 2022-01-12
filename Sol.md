@@ -29,9 +29,9 @@ module load cmake boost adios2 fftw hypre kahip metis petsc scotch
 ```bash
 foam
 export MPI_ARCH_PATH="/share/Apps/lusoft/opt/spack/linux-centos8-haswell/gcc-9.3.0/mpich/3.3.2-rc3lxvt"
-# Max 2 cores on the head node
+# Limited to 2 cores on the head node, very slow
 ./Allwmake -j 2 -s -l
-# Run twice then check the log file
+# Run again and check the log file
 ./Allwmake -j 2 -s -l
 wmRefresh
 ```
