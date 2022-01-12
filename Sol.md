@@ -36,6 +36,26 @@ export MPI_ARCH_PATH="/share/Apps/lusoft/opt/spack/linux-centos8-haswell/gcc-9.3
 wmRefresh
 ```
 
-4. Download swak4Foam
+4. swak4Foam (Optional)
 
-5. Compile swak4Foam
+# Sample SLURM Script
+```bash
+#!/bin/bash
+#SBATCH --partition=enge
+#SBATCH -t 48:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --job-name YOUR_JOBNAME
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=YOUR_EMAIL
+
+source /etc/profile.d/zlmod.sh
+module load gcc
+module load mpich
+source /home/YOUR_USERNAME/OpenFOAM/OpenFOAM-v2112/etc/bashrc
+
+cd ${SLURM_SUBMIT_DIR}
+decomposePar
+srun renumberMesh -overwrite -parallel > renumberMesh.log
+srun viscoelasticFluidFoam -parallel > viscoelasticFluidFoam.log
+```
