@@ -4,8 +4,7 @@
 cd $HOME
 mkdir OpenFOAM
 cd OpenFOAM
-git clone https://develop.openfoam.com/Development/openfoam.git
-mv openfoam OpenFOAM-v2112
+git clone https://develop.openfoam.com/Development/openfoam.git OpenFOAM-v2112
 cd OpenFOAM-v2112
 git checkout OpenFOAM-v2112
 wget https://github.com/BrushXue/OztekinGroup/blob/main/OpenFOAM-Sol.patch
@@ -16,6 +15,7 @@ git submodule update
 
 2. Environment Setup
 ```bash
+# Use gcc and mpich for best compatibility across all clusters
 echo "module load gcc" >> $HOME/.bashrc
 echo "module load mpich" >> $HOME/.bashrc
 echo "source $HOME/OpenFOAM/OpenFOAM-v2112/etc/bashrc" >> $HOME/.bashrc
@@ -37,7 +37,20 @@ wmRefresh
 ```
 
 4. swak4Foam (Optional)
-
+```bash
+foam
+cd ..
+hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam swak4Foam
+cd swak4Foam
+hg update develop
+# No idea why but the error message indicates this
+mkdir $HOME/JOB_TMPDIR
+./maintainanceScripts/compileRequirements.sh
+export WM_NCOMPPROCS=2
+./Allwmake > log.make 2>&1
+# Run again
+./Allwmake > log.make 2>&1
+```
 # Sample SLURM Script
 ```bash
 #!/bin/bash
