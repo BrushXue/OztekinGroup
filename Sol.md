@@ -7,7 +7,7 @@ cd OpenFOAM
 git clone https://develop.openfoam.com/Development/openfoam.git OpenFOAM-v2112
 cd OpenFOAM-v2112
 git checkout OpenFOAM-v2112
-wget https://github.com/BrushXue/OztekinGroup/blob/main/OpenFOAM-Sol.patch
+wget https://github.com/BrushXue/OztekinGroup/raw/main/OpenFOAM-Sol.patch
 git apply OpenFOAM-Sol.patch
 git submodule init
 git submodule update
