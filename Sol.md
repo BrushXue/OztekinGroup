@@ -48,7 +48,7 @@ mkdir $HOME/JOB_TMPDIR
 ./maintainanceScripts/compileRequirements.sh
 export WM_NCOMPPROCS=2
 ./Allwmake > log.make 2>&1
-# Run again
+# Run again, ignore python plugin error
 ./Allwmake > log.make 2>&1
 ```
 # Sample SLURM Script
