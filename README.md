@@ -68,7 +68,7 @@ dnf -y install paraview
 Source OpenFOAM folder
 ```
 echo 'module load mpi/openmpi-x86_64' >> $HOME/.bashrc
-echo 'source /usr/lib/openfoam/openfoam2106/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
+echo 'source /usr/lib/openfoam/openfoam2112/etc/bashrc $FOAM_SETTINGS' >> $HOME/.bashrc
 source $HOME/.bashrc
 ```
 If `module` is missing, log out & log in.
