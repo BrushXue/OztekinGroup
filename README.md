@@ -43,7 +43,7 @@ Install prerequisites
 mkdir -p /share/Apps
 dnf -y install libpng12 libnsl
 ```
-Login to group NAS via **rsync** (DO NOT use SMB here)
+Download A**** via **rsync** (DO NOT use SMB here)
 ```
 rsync -a -P username@oztekingroup.dept.lehigh.edu:/mnt/Lab/gux215/A**** /share/Apps
 ```
