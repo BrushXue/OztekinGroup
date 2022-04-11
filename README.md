@@ -43,15 +43,14 @@ Install prerequisites
 mkdir -p /share/Apps
 dnf -y install libpng12 libnsl
 ```
-Login to group NAS via **SFTP** (DO NOT use SMB here)
+Login to group NAS via **rsync** (DO NOT use SMB here)
 ```
-sftp://<username>@oztekingroup.dept.lehigh.edu
+rsync -a -P username@oztekingroup.dept.lehigh.edu:/mnt/Lab/gux215/A**** /share/Apps
 ```
-Copy all files from `/mnt/Lab/gux215/A****` to `/share/Apps/A****`
 
 While waiting for it, you can continue and come back later.
 
-Use `chown -R oztekinlab A****` and `chgrp -R oztekinlab A****` to fix permission if you copied A**** in root account.
+Use `chown -R oztekinlab A****` and `chgrp -R oztekinlab A****` to fix permission.
 
 ## OpenFOAM
 Install pre-compiled OpenFOAM
