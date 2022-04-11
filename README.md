@@ -45,7 +45,7 @@ dnf -y install libpng12 libnsl
 ```
 Download A**** via **rsync** (DO NOT use SMB here)
 ```
-rsync -a -P username@oztekingroup.dept.lehigh.edu:/mnt/Lab/gux215/A**** /share/Apps
+rsync -aP username@oztekingroup.dept.lehigh.edu:/mnt/Lab/gux215/A**** /share/Apps
 ```
 
 While waiting for it, you can continue and come back later.
