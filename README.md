@@ -3,10 +3,11 @@ Instructions to reinstall lab workstations
 
 End Of Life: 31st May 2029
 ## Creating Installer
-1. Download the latest Rocky Linux image from https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.5-x86_64-dvd1.iso
-2. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive. This tool is cross-platform and you can do it on any OS.
-3. Boot from the flash drive. Select `UEFI` if available.
-4. Install Rocky Linux. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> ****** in basic graphics mode`.
+1. Make sure the `Secure Boot` in UEFI BIOS is disabled.
+2. Download the latest Rocky Linux image from https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.5-x86_64-dvd1.iso
+3. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive. This tool is cross-platform and you can do it on any OS.
+4. Boot from the flash drive. Select `UEFI` if available.
+5. Install Rocky Linux. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> ****** in basic graphics mode`.
 ## Options
 1. Software Selection: Choose `Workstation`, tick `Development Tools` and `Scientific Support`
 2. Installation Destination: Choose the SSD and select `I will configure partitioning`. Delete all existing partitions and select `Standard Partition`. Set up 200 MB for `/boot/efi`, **at least** 60 GB for `/`(use `ext4`) and the rest to `/home`(use `ext4`). No need to have `/swap` if the RAM is large enough.
