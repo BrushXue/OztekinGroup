@@ -31,7 +31,7 @@ dnf config-manager --set-enabled powertools
 dnf install -y epel-release
 dnf -y update
 dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
-dnf -y module install nvidia-driver:418
+dnf -y module install nvidia-driver:470
 nvidia-xconfig
 ```
 Reboot
