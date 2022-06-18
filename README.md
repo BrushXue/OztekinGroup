@@ -5,8 +5,8 @@ End Of Life: 31st May 2029
 ## Creating Installer
 1. Make sure the `Secure Boot` in UEFI BIOS is disabled.
 2. Download the latest Rocky Linux image from https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.6-x86_64-dvd1.iso
-3. Use [balenaEtcher](https://www.balena.io/etcher/) to write .iso to a flash drive. This tool is cross-platform and you can do it on any OS.
-4. Boot from the flash drive. Select `UEFI` if available.
+3. Use [Ventoy]([https://www.balena.io/etcher/](https://github.com/ventoy/Ventoy/releases)) to install the image. You don't need to write images to the flash drive anymore.
+4. Boot from the flash drive and select Rocky Linux image.
 5. Install Rocky Linux. If you experience graphics issue, press `e` and append `nomodeset` then press ctrl+x to start installer. If still not working, select `Troubleshooting -> ****** in basic graphics mode`.
 ## Options
 1. Software Selection: Choose `Workstation`, tick `Development Tools` and `Scientific Support`
